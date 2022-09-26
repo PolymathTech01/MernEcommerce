@@ -1,0 +1,38 @@
+{
+  "name": "mern_ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ecommerce-backend/server",
+    "server": "nodemon ecommerce-backend/server",
+    "client": "npm start --prefix ecommerce-frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "data:import": "node ecommerce-backend/seeders",
+    "data:destroy": "node ecommerce-backend/seeders -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PolymathTech01/MernEcommerce.git"
+  },
+  "author": "Alli Olarinde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PolymathTech01/MernEcommerce/issues"
+  },
+  "homepage": "https://github.com/PolymathTech01/MernEcommerce#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.6.1"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.20"
+  }
+}
