@@ -6,10 +6,11 @@ import { listProducts } from '../Actions/product.actions';
 const HomeScreen = () => {
   const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state);
+  const productList = useSelector((state) => state.productListReducer);
   const { loading, error, products } = productList;
   console.log('state', productList);
   console.log('error', error);
+  console.log('loading', loading);
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch]);
@@ -17,7 +18,7 @@ const HomeScreen = () => {
   return (
     <>
       <h1 className='text-uppercase'>Latest Products</h1>
-      {/* {loading ? (
+      {loading ? (
         <h2>Loading....</h2>
       ) : error ? (
         <h3>{error}</h3>
@@ -29,7 +30,7 @@ const HomeScreen = () => {
             </Col>
           ))}
         </Row>
-      )} */}
+      )}
     </>
   );
 };
